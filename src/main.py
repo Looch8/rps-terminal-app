@@ -28,7 +28,7 @@ def play_round(player_selection, computer_selection):
         return (f'You lose, {computer_selection} beats {player_selection}')
 
 
-player_selection = input('rock, paper, or scissors? ')
+player_selection = input('rock, paper, or scissors? ').lower()
 
 # calling comp function to randomize computer choice
 computer_selection = get_computer_choice()
