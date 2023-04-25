@@ -55,7 +55,7 @@ def play_round(player_choice, computer_choice):
 
 
 def save_scores(player_score, computer_score):
-    with open('scores.csv', 'a', newline='') as csv_file:
+    with open('scores.csv', 'a') as csv_file:
         writer = csv.writer(csv_file)
         writer.writerow([player_score, computer_score])
 
@@ -66,8 +66,8 @@ def print_scores():
         player_wins = 0
         computer_wins = 0
         for row in reader:
-            player_wins += int(row[0])
-            computer_wins += int(row[1])
+            player_wins = int(row[0])
+            computer_wins = int(row[1])
         print(f'Player wins: {player_wins}')
         print(f'Computer wins: {computer_wins}')
 
