@@ -1,5 +1,11 @@
 # ROCK PAPER SCISSORS
-import random
+
+# Modules
+import random  # for getting random computer choice
+import csv  # for reading and writing scores to csv file
+import sys  # provide info on functions
+import unittest  # for testing
+
 
 # Function that generates a computer choice
 
@@ -26,6 +32,11 @@ def play_round(player_selection, computer_selection):
         return (f'You win, {player_selection} beats {computer_selection}!')
     else:
         return (f'You lose, {computer_selection} beats {player_selection}')
+
+
+def player_choice(player_selection):
+    while player_selection != 'rock' or player_selection != 'paper' or player_selection != 'scissors':
+        return player_selection
 
 
 player_selection = input('rock, paper, or scissors? ').lower()
