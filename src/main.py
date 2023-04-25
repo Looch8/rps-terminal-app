@@ -28,10 +28,10 @@ import sys  # provide info on functions
 def get_player_choice():
     while True:
         player_choice = input(
-            'Choose rock, paper, or scissors - or type "end" to exit: ').lower()
+            f'\n{fg("yellow")}Choose rock, paper, or scissors - or type "end" to quit: ').lower()
         if player_choice == "end":
             # had to use exit to exit program - break was not working, not sure why.
-            print('Goodbye, thank you for playing!')
+            print(f'\n{fg(178)}Goodbye, thank you for playing! :)')
             exit()
         elif player_choice not in ['rock', 'paper', 'scissors']:
             # Raise value error if not an input from list
@@ -76,8 +76,10 @@ def print_scores():
         for row in reader:
             player_wins = int(row[0])
             computer_wins = int(row[1])
-        print(f'Player score: {player_wins}')
-        print(f'Computer score: {computer_wins}')
+        print(
+            f"{fg(15)} {bg('blue')}Player score: {player_wins} {attr('reset')}")
+        print(
+            f"{fg(15)} {bg('red')}Computer score: {computer_wins} {attr('reset')}")
 
 
 def game():
@@ -90,24 +92,24 @@ def game():
         winner = play_round(player_choice, computer_choice)
         if winner == 'draw':
             print(
-                f"{fg(28)}It's a draw, you both picked {player_choice}! {attr('reset')}")
+                f"\n{fg(28)}YOU DREW! - you both picked {player_choice}! {attr('reset')}")
         elif winner == 'player':
             player_score += 1
             print(
-                f"{fg(21)} You win - {player_choice} beats {computer_choice}! {attr('reset')}")
+                f"\n{fg(21)} YOU WIN! - {player_choice} beats {computer_choice}! {attr('reset')}")
         else:
             computer_score += 1
             print(
-                f"{fg(9)}You lose - {computer_choice} beats {player_choice}! {attr('reset')}")
+                f"\n{fg(9)}YOU LOSE! - {computer_choice} beats {player_choice}! {attr('reset')}")
         save_scores(player_score, computer_score)
         print_scores()
 
         # End game
         if player_score == 5:
-            print('Game over - You win!')
+            print(f'\n{bg("blue")}Game over - YOU WIN!')
             break
         elif computer_score == 5:
-            print('Game over - Computer wins!')
+            print(f'\n{bg("red")}Game over - COMPUTER WINS!')
             break
 
     # # Loop number of rounds
