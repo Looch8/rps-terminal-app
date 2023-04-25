@@ -27,13 +27,18 @@ import unittest  # for testing
 
 def get_player_choice():
     while True:
-        player_choice = input('rock, paper, or scissors?: ').lower()
-        if player_choice not in ['rock', 'paper', 'scissors']:
+        player_choice = input(
+            'Choose rock, paper, or scissors - or type "end" to exit: ').lower()
+        if player_choice == "end":
+            # had to use exit to exit program - break was not working, not sure why.
+            print('Goodbye, thank you for playing!')
+            exit()
+        elif player_choice not in ['rock', 'paper', 'scissors']:
             # Raise value error if not an input from list
             raise ValueError('Not a valid choice')
         else:
             return player_choice
-
+    # print('Goodbye, Thank you for playing!')
 # Computer choice
 
 
@@ -52,7 +57,6 @@ def play_round(player_choice, computer_choice):
         return 'player'
     else:
         return 'computer'
-
 # Save score to CSV file
 
 
@@ -102,6 +106,7 @@ def game():
         elif computer_score == 5:
             print('Game over - Computer wins!')
             break
+
 
     # # Loop number of rounds
     # for current_round in range(1, 6):
