@@ -57,18 +57,18 @@ def play_round(player_choice, computer_choice):
 
 
 def save_scores(player_score, computer_score):
-    with open('score.csv', 'a', newline='') as csvfile:
-        writer = csv.writer(csvfile)
+    with open('scores.csv', 'a', newline='') as csv_file:
+        writer = csv.writer(csv_file)
         writer.writerow([player_score, computer_score])
 
 
 def print_scores():
-    with open('score.csv', 'r') as csvfile:
-        reader = csv.reader(csvfile)
+    with open('scores.csv', 'r') as csv_file:
+        reader = csv.reader(csv_file)
         player_wins = 0
         computer_wins = 0
         for row in reader:
-            players_wins += int(row[0])
+            player_wins += int(row[0])
             computer_wins += int(row[1])
         print(f'Player wins: {player_wins}')
         print(f'Computer wins: {computer_wins}')
@@ -83,13 +83,13 @@ def game():
         computer_choice = get_computer_choice()
         winner = play_round(player_choice, computer_choice)
         if winner == 'tie':
-            return "It's a draw!"
+            print(f"It's a draw!")
         elif winner == 'player':
             player_score += 1
-            return f"You win - {player_choice} beats {computer_choice}"
+            print(f"You win - {player_choice} beats {computer_choice}")
         else:
             computer_score += 1
-            return f"You lose - {computer_choice} beats {player_choice}"
+            print(f"You lose - {computer_choice} beats {player_choice}")
         save_scores(player_score, computer_score)
         print_scores()
 
@@ -98,8 +98,6 @@ def game():
     #     print(f'Round {current_round}')
     #     play_round(player_choice='rock', computer_choice='scissors')
     #     current_round += 1
-
-
 game()
 
 
