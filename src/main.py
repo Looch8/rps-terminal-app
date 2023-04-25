@@ -1,4 +1,5 @@
 # ROCK PAPER SCISSORS
+from colored import fg, bg, attr
 
 # Modules
 import random  # for getting random computer choice
@@ -88,13 +89,16 @@ def game():
         computer_choice = get_computer_choice()
         winner = play_round(player_choice, computer_choice)
         if winner == 'draw':
-            print(f"It's a draw, you both picked {player_choice}")
+            print(
+                f"{fg(28)}It's a draw, you both picked {player_choice}! {attr('reset')}")
         elif winner == 'player':
             player_score += 1
-            print(f"You win - {player_choice} beats {computer_choice}")
+            print(
+                f"{fg(21)} You win - {player_choice} beats {computer_choice}! {attr('reset')}")
         else:
             computer_score += 1
-            print(f"You lose - {computer_choice} beats {player_choice}")
+            print(
+                f"{fg(9)}You lose - {computer_choice} beats {player_choice}! {attr('reset')}")
         save_scores(player_score, computer_score)
         print_scores()
 
