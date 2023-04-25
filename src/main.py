@@ -1,9 +1,9 @@
 # ROCK PAPER SCISSORS
-from colored import fg, bg, attr
 
 # Modules
 import random  # for getting random computer choice
 import csv  # for reading and writing scores to csv file
+from colored import fg, bg, attr
 import sys  # provide info on functions
 
 
