@@ -5,8 +5,13 @@ import random  # for getting random computer choice
 import csv  # for reading and writing scores to csv file
 import sys  # provide info on functions
 import unittest  # for testing
-from game_functions import get_player_choice, get_computer_choice, play_round, update_score
 
+# Function imports
+from game_functions import get_player_choice, get_computer_choice
+
+
+print(get_player_choice())
+print(get_computer_choice())
 # User choice
 # player_selection = input('rock, paper, or scissors? ').lower()
 

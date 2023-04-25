@@ -1,52 +1,19 @@
-import csv
-import random
+# Modules
+import random  # for getting random computer choice
 
-# Valid choices
-valid_choices = ['rock', 'paper', 'scissors']
+# Function to get player choice, will raise error if use does not enter either 'rock', 'paper', or 'scissors'. Input is not case sensitive
 
 
 def get_player_choice():
     while True:
-        player_selection = input('rock, paper, or scissors? ').lower()
-        if player_selection not in valid_choices:
-            raise ValueError('Invalid choice')
+        player_choice = input('rock, paper, or scissors?: ').lower()
+        if player_choice not in ['rock', 'paper', 'scissors']:
+            raise ValueError('Not a valid choice')
         else:
-            return player_selection
+            return player_choice
 
 
-# Function that generates a computer choice
 def get_computer_choice():
-    # Random int between 0, 1, 2
-    num = random.randint(0, 2)
-    if num == 0:
-        return 'rock'
-    elif num == 1:
-        return 'paper'
-    else:
-        return 'scissors'
-
-# Function that gets user input
-
-# Function that plays one round of RPS.
-
-
-def play_round(player_selection, computer_selection):
-    if player_selection == computer_selection:
-        return (f"It's a draw, you both picked {player_selection}")
-    elif player_selection == 'rock' and computer_selection == 'scissors' or player_selection == 'paper' and computer_selection == 'rock' or player_selection == 'scissors' and computer_selection == 'paper':
-        return (f'You win, {player_selection} beats {computer_selection}!')
-    else:
-        return (f'You lose, {computer_selection} beats {player_selection}')
-
-
-def update_score(winner):
-    with open("score.csv", "r") as file:
-        reader = csv.reader(file)
-        score = next(reader)
-        if winner == "user":
-            score[0] = str(int(score[0]) + 1)
-        elif winner == "computer":
-            score[1] = str(int(score[1]) + 1)
-    with open("score.csv", "w", newline="") as file:
-        writer = csv.writer(file)
-        writer.writerow(score)
+    computer_choices = ['rock', 'paper', 'scissors']
+    computer_choice = random.choice(computer_choices)
+    return computer_choice
