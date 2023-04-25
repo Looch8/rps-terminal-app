@@ -28,7 +28,7 @@ import sys  # provide info on functions
 def get_player_choice():
     while True:
         player_choice = input(
-            f'\n{fg("yellow")}Choose rock, paper, or scissors - or type "end" to quit: ').lower()
+            f"\n{fg('yellow')}Type 'rock', 'paper', or 'scissors' - or type 'end' to quit: ").lower()
         if player_choice == "end":
             # had to use exit to exit program - break was not working, not sure why.
             print(f'\n{fg(178)}Goodbye, thank you for playing! :)')
