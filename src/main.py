@@ -50,10 +50,8 @@ def play_round(player_choice, computer_choice):
         return ('draw')
     elif player_choice == 'rock' and computer_choice == 'scissors' or player_choice == 'paper' and computer_choice == 'rock' or player_choice == 'scissors' and computer_choice == 'paper':
         return 'player'
-        # return f'You win - {player_choice} beats {computer_choice}!'
     else:
         return 'computer'
-        # return f'You lose - {computer_choice} beats {player_choice}!'
 
 
 def save_scores(player_score, computer_score):
@@ -82,8 +80,8 @@ def game():
         player_choice = get_player_choice()
         computer_choice = get_computer_choice()
         winner = play_round(player_choice, computer_choice)
-        if winner == 'tie':
-            print(f"It's a draw!")
+        if winner == 'draw':
+            print(f"It's a draw, you both picked {player_choice}")
         elif winner == 'player':
             player_score += 1
             print(f"You win - {player_choice} beats {computer_choice}")
