@@ -53,11 +53,15 @@ def play_round(player_choice, computer_choice):
     else:
         return 'computer'
 
+# Save score to CSV file
+
 
 def save_scores(player_score, computer_score):
     with open('scores.csv', 'a') as csv_file:
         writer = csv.writer(csv_file)
         writer.writerow([player_score, computer_score])
+
+# Print scores
 
 
 def print_scores():
@@ -68,8 +72,8 @@ def print_scores():
         for row in reader:
             player_wins = int(row[0])
             computer_wins = int(row[1])
-        print(f'Player wins: {player_wins}')
-        print(f'Computer wins: {computer_wins}')
+        print(f'Player score: {player_wins}')
+        print(f'Computer score: {computer_wins}')
 
 
 def game():
@@ -91,12 +95,24 @@ def game():
         save_scores(player_score, computer_score)
         print_scores()
 
+        # End game
+        if player_score == 5:
+            print('Game over - You win!')
+            break
+        elif computer_score == 5:
+            print('Game over - Computer wins!')
+            break
+
     # # Loop number of rounds
     # for current_round in range(1, 6):
     #     print(f'Round {current_round}')
     #     play_round(player_choice='rock', computer_choice='scissors')
     #     current_round += 1
 game()
+
+
+def reset_game():
+    pass
 
 
 # User choice
