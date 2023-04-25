@@ -4,7 +4,6 @@
 import random  # for getting random computer choice
 import csv  # for reading and writing scores to csv file
 import sys  # provide info on functions
-import unittest  # for testing
 
 # Function imports
 
@@ -106,7 +105,6 @@ def game():
         elif computer_score == 5:
             print('Game over - Computer wins!')
             break
-
 
     # # Loop number of rounds
     # for current_round in range(1, 6):
