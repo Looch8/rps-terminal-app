@@ -6,40 +6,21 @@ import random  # for getting random computer choice
 import csv  # for reading and writing scores to csv file
 import sys  # provide info on functions
 
-# Function imports
-
-# # Create CSV file
-# with open('score.csv', 'w') as csv_file:
-#     fieldnames = ['Player', 'Computer', 'Score']
-#     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-#     writer.writeheader()
-
-# Append player and computer information to CSV file
-#  with open('score.csv', 'a') as csv.file:
-#         writer = csv.writer(csv_file)
-#         writer.writerow(['Player', player_score])
-#         writer.writerow(['Computer', computer_score])
-
-# Function to get player choice, will raise error if use does not enter either 'rock', 'paper', or 'scissors'. Input is not case sensitive
-
-# Player choice
-
 
 def get_player_choice():
     while True:
-        player_choice = input(
-            f"\n{fg('yellow')}Type 'rock', 'paper', or 'scissors' - or type 'end' to quit: ").lower()
-        if player_choice == "end":
-            # had to use exit to exit program - break was not working, not sure why.
-            print(f'\n{fg(178)}Goodbye, thank you for playing! :)')
-            exit()
-        elif player_choice not in ['rock', 'paper', 'scissors']:
-            # Raise value error if not an input from list
-            raise ValueError('Not a valid choice')
-        else:
-            return player_choice
-    # print('Goodbye, Thank you for playing!')
-# Computer choice
+        try:
+            player_choice = input(
+                f"\n{fg('yellow')}Type 'rock', 'paper', or 'scissors' - or type 'end' to quit: ").lower()
+            if player_choice == "end":
+                print(f'\n{fg(5)}Goodbye, thank you for playing! :)')
+                exit()
+            elif player_choice not in ['rock', 'paper', 'scissors']:
+                raise ValueError
+            else:
+                return player_choice
+        except ValueError as e:
+            print(f'{fg(28)}Not a valid choice, please choose again.')
 
 
 def get_computer_choice():
@@ -106,17 +87,11 @@ def game():
 
         # End game
         if player_score == 5:
-            print(f'\n{bg("blue")}Game over - YOU WIN!')
+            print(f'\n{bg("blue")}Game over - YOU WON!')
             break
         elif computer_score == 5:
-            print(f'\n{bg("red")}Game over - COMPUTER WINS!')
+            print(f'\n{bg("red")}Game over - COMPUTER WON!')
             break
-
-    # # Loop number of rounds
-    # for current_round in range(1, 6):
-    #     print(f'Round {current_round}')
-    #     play_round(player_choice='rock', computer_choice='scissors')
-    #     current_round += 1
 
 
 game()
@@ -125,14 +100,6 @@ game()
 def reset_game():
     pass
 
-
-# User choice
-# player_selection = input('rock, paper, or scissors? ').lower()
-
-
-# # calling comp function to randomize computer choice
-# computer_selection = get_computer_choice()
-# print(play_round(get_player_choice, computer_selection))
 
 # Function that keeps score (first to 5 wins) and prints winner to the console
 # Ability to reset game at any point in time during the game
