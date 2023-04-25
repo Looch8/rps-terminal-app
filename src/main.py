@@ -7,11 +7,13 @@ import sys  # provide info on functions
 import unittest  # for testing
 
 # Function imports
-from game_functions import get_player_choice, get_computer_choice
+from game_functions import get_player_choice, get_computer_choice, play_round
 
 
 print(get_player_choice())
 print(get_computer_choice())
+print(play_round(player_choice='rock', computer_choice='scissors'))
+
 # User choice
 # player_selection = input('rock, paper, or scissors? ').lower()
 
