@@ -94,7 +94,9 @@ def game():
             break
 
 
-game()
+# To prevent entire script from running when testing
+if __name__ == "__main__":
+    game()
 
 
 def reset_game():
