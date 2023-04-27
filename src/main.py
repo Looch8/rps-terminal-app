@@ -5,7 +5,6 @@ import random  # for getting random computer choice
 import csv  # for reading and writing scores to csv file
 from colored import fg, bg, attr
 from art import tprint
-# import sys  # provide info on functions
 
 # Intro message
 tprint('Rock Paper Scissors!')
