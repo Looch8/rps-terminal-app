@@ -28,9 +28,14 @@ def get_player_choice():
 
 
 def get_computer_choice():
-    computer_choices = ['rock', 'paper', 'scissors']
-    computer_choice = random.choice(computer_choices)
-    return computer_choice
+    try:
+        computer_choices = ['rock', 'paper', 'scissors']
+        computer_choice = random.choice(computer_choices)
+        return computer_choice
+    except:
+        print('An error occurred')
+        return None
+
 
 # Round of RPS
 
@@ -42,6 +47,8 @@ def play_round(player_choice, computer_choice):
         return 'player'
     else:
         return 'computer'
+
+
 # Save score to CSV file
 
 
@@ -68,34 +75,37 @@ def print_scores():
 
 
 def game():
-    # Initial scores
-    player_score = 0
-    computer_score = 0
-    while True:
-        player_choice = get_player_choice()
-        computer_choice = get_computer_choice()
-        winner = play_round(player_choice, computer_choice)
-        if winner == 'draw':
-            print(
-                f"\n{fg(28)}YOU DREW! - you both picked {player_choice}! {attr('reset')}")
-        elif winner == 'player':
-            player_score += 1
-            print(
-                f"\n{fg(21)} YOU WIN! - {player_choice} beats {computer_choice}! {attr('reset')}")
-        else:
-            computer_score += 1
-            print(
-                f"\n{fg(9)}YOU LOSE! - {computer_choice} beats {player_choice}! {attr('reset')}")
-        save_scores(player_score, computer_score)
-        print_scores()
+    try:
+        # Initial scores
+        player_score = 0
+        computer_score = 0
+        while True:
+            player_choice = get_player_choice()
+            computer_choice = get_computer_choice()
+            winner = play_round(player_choice, computer_choice)
+            if winner == 'draw':
+                print(
+                    f"\n{fg(28)}YOU DREW! - you both picked {player_choice}! {attr('reset')}")
+            elif winner == 'player':
+                player_score += 1
+                print(
+                    f"\n{fg(21)} YOU WIN! - {player_choice} beats {computer_choice}! {attr('reset')}")
+            else:
+                computer_score += 1
+                print(
+                    f"\n{fg(9)}YOU LOSE! - {computer_choice} beats {player_choice}! {attr('reset')}")
+            save_scores(player_score, computer_score)
+            print_scores()
 
-        # End game
-        if player_score == 5:
-            print(f'\n{bg("blue")}Game over - YOU WON!')
-            break
-        elif computer_score == 5:
-            print(f'\n{bg("red")}Game over - COMPUTER WON!')
-            break
+            # End game
+            if player_score == 5:
+                print(f'\n{bg("blue")}Game over - YOU WON!')
+                break
+            elif computer_score == 5:
+                print(f'\n{bg("red")}Game over - COMPUTER WON!')
+                break
+    except Exception as e:
+        print(f'an error occurred: {e}')
 
 
 # To prevent entire script from running when testing
