@@ -7,7 +7,7 @@ from colored import fg, bg, attr
 from art import tprint
 # import sys  # provide info on functions
 
-
+# Intro message
 tprint('Rock Paper Scissors!')
 
 
@@ -120,9 +120,6 @@ def reset_game():
 
 # Include a script file to run application, like we did in Week 8 Day 3 class (around 2.5 hours in iirc)
 
-# MULTIPLE bash scripts required. Suggested: one to check python, one to check packages, one to check all files available, one to run the program
-
-# MINIMUM 20 commits. Will only get 2/6 marks if you have less than 20. Cannot be all in one day (RIP procrastina
 
 # A couple of my notes:
 # Project management platforms: trello, monday.com, meistertask
