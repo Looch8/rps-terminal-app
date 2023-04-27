@@ -1,6 +1,9 @@
 art==5.9
+colorama==0.4.6
 colored==1.4.4
+emoji==2.2.0
 iniconfig==2.0.0
 packaging==23.1
+Pillow==9.5.0
 pluggy==1.0.0
 pytest==7.3.1

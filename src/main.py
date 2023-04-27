@@ -5,6 +5,7 @@ import random  # for getting random computer choice
 import csv  # for reading and writing scores to csv file
 from colored import fg, bg, attr
 from art import tprint
+import emoji
 
 # Intro message
 tprint('Rock Paper Scissors!')
@@ -14,9 +15,10 @@ def get_player_choice():
     while True:
         try:
             player_choice = input(
-                f"\n{fg('yellow')}Type 'rock', 'paper', or 'scissors' - or type 'end' to quit: \n\n").lower()
+                f"\n{fg('yellow')}Choose rock 🪨  paper '📄 or'scissor ✂️' - or type 'end' to quit: \n\n").lower()
             if player_choice == "end":
-                print(f'\n{fg(5)}Goodbye, thank you for playing! :)')
+                print(emoji.emojize(
+                    f'\n{fg(5)}Goodbye, thank you for playing! 😊', language='alias'))
                 exit()
             elif player_choice not in ['rock', 'paper', 'scissors']:
                 raise ValueError
@@ -95,24 +97,24 @@ def game():
             winner = play_round(player_choice, computer_choice)
             if winner == 'draw':
                 print(
-                    f"\n{fg(28)}YOU DREW! - you both picked {player_choice}! {attr('reset')}")
+                    f"\n{fg(28)}YOU DREW! - you both picked {player_choice}! {attr('reset')}😮")
             elif winner == 'player':
                 player_score += 1
                 print(
-                    f"\n{fg(21)} YOU WIN! - {player_choice} beats {computer_choice}! {attr('reset')}")
+                    f"\n{fg(21)} YOU WIN! - {player_choice} beats {computer_choice}! {attr('reset')}😀")
             else:
                 computer_score += 1
                 print(
-                    f"\n{fg(9)}YOU LOSE! - {computer_choice} beats {player_choice}! {attr('reset')}")
+                    f"\n{fg(9)}YOU LOSE! - {computer_choice} beats {player_choice}! {attr('reset')}🙁")
             save_scores(player_score, computer_score)
             print_scores()
 
             # End game
             if player_score == 5:
-                print(f'\n{bg("blue")}Game over - YOU WON!')
+                print(f'\n{bg("blue")}Game over - YOU WON!🏆')
                 break
             elif computer_score == 5:
-                print(f'\n{bg("red")}Game over - COMPUTER WON!')
+                print(f'\n{bg("red")}Game over - COMPUTER WON!😭')
                 break
     except KeyboardInterrupt:
         print('Game interrupted by player')
