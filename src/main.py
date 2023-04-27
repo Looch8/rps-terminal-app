@@ -4,7 +4,11 @@
 import random  # for getting random computer choice
 import csv  # for reading and writing scores to csv file
 from colored import fg, bg, attr
-import sys  # provide info on functions
+from art import tprint
+# import sys  # provide info on functions
+
+
+tprint('Rock Paper Scissors!')
 
 
 def get_player_choice():
