@@ -15,7 +15,7 @@ def get_player_choice():
     while True:
         try:
             player_choice = input(
-                f"\n{fg('yellow')}Choose rock 🪨  paper '📄 or'scissor ✂️' - or type 'end' to quit: \n\n").lower()
+                f"\n{fg('yellow')}Choose rock 🪨  paper ''📄 o''scisso ✂️'' - or type 'end' to quit: \n\n").lower()
             if player_choice == "end":
                 print(emoji.emojize(
                     f'\n{fg(5)}Goodbye, thank you for playing! 😊', language='alias'))
@@ -126,25 +126,9 @@ def game():
 if __name__ == "__main__":
     game()
 
-
-def reset_game():
-    pass
-
-
-# Function that keeps score (first to 5 wins) and prints winner to the console
-# Ability to reset game at any point in time during the game
-# Function to reset game and start again once a winner is announced
-# score function in file that updates with each round (thanks for suggestion, Simon)
-
-
 # Hardware requirements just has to be "what hardware you tested it on"
 
-# for best marks, must use 4+ imported packages (csv, colored, etc)
 #   N.B. this does NOT include importing your own functions. You need 5 of these as well.
 
-# Include a script file to run application, like we did in Week 8 Day 3 class (around 2.5 hours in iirc)
 
-
-# A couple of my notes:
 # Project management platforms: trello, monday.com, meistertask
-# Testing: can be automatic (using pytest for example) or manual (using a spreadsheet)
