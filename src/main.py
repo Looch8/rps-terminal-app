@@ -15,7 +15,7 @@ def get_player_choice():
     while True:
         try:
             player_choice = input(
-                f"\n{fg('yellow')}Choose rock 🪨  paper ''📄 o''scisso ✂️'' - or type 'end' to quit: \n\n").lower()
+                f"\n{fg('yellow')}Choose 🪨  rock, 📄 paper or ✂️ scissors - or type 'end' to quit: \n\n").lower()
             if player_choice == "end":
                 print(emoji.emojize(
                     f'\n{fg(5)}Goodbye, thank you for playing! 😊', language='alias'))
