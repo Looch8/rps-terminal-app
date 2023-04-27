@@ -33,7 +33,7 @@ def get_computer_choice():
         computer_choice = random.choice(computer_choices)
         return computer_choice
     except:
-        print('An error occurred')
+        print('An unforeseen error occurred')
         return None
 
 
@@ -53,9 +53,12 @@ def play_round(player_choice, computer_choice):
 
 
 def save_scores(player_score, computer_score):
-    with open('scores.csv', 'a') as csv_file:
-        writer = csv.writer(csv_file)
-        writer.writerow([player_score, computer_score])
+    try:
+        with open('scores.csv', 'a') as csv_file:
+            writer = csv.writer(csv_file)
+            writer.writerow([player_score, computer_score])
+    except OSError as e:
+        print(f'Error writing scores to csv file: {e}')
 
 # Print scores
 
@@ -104,8 +107,10 @@ def game():
             elif computer_score == 5:
                 print(f'\n{bg("red")}Game over - COMPUTER WON!')
                 break
+    except KeyboardInterrupt:
+        print('\n Game interrupted by player')
     except Exception as e:
-        print(f'an error occurred: {e}')
+        print(f'an error occurred during the game: {e}')
 
 
 # To prevent entire script from running when testing
