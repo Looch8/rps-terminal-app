@@ -32,8 +32,11 @@ def get_computer_choice():
         computer_choices = ['rock', 'paper', 'scissors']
         computer_choice = random.choice(computer_choices)
         return computer_choice
-    except:
-        print('An unforeseen error occurred')
+    except IndexError:
+        print('Element not present in list, or list is empty.')
+        return None
+    except Exception as e:
+        print(f'An error occurred: {e}')
         return None
 
 
@@ -64,17 +67,22 @@ def save_scores(player_score, computer_score):
 
 
 def print_scores():
-    with open('scores.csv', 'r') as csv_file:
-        reader = csv.reader(csv_file)
-        player_wins = 0
-        computer_wins = 0
-        for row in reader:
-            player_wins = int(row[0])
-            computer_wins = int(row[1])
-        print(
-            f"{fg(15)} {bg('blue')}Player score: {player_wins} {attr('reset')}")
-        print(
-            f"{fg(15)} {bg('red')}Computer score: {computer_wins} {attr('reset')}")
+    try:
+        with open('scores.csv', 'r') as csv_file:
+            reader = csv.reader(csv_file)
+            player_wins = 0
+            computer_wins = 0
+            for row in reader:
+                player_wins = int(row[0])
+                computer_wins = int(row[1])
+            print(
+                f"{fg(15)} {bg('blue')}Player score: {player_wins} {attr('reset')}")
+            print(
+                f"{fg(15)} {bg('red')}Computer score: {computer_wins} {attr('reset')}")
+    except ValueError:
+        print('There was an error reading the scores file.')
+    except FileNotFoundError:
+        print('The scores file was unable to be found.')
 
 
 def game():
@@ -108,7 +116,7 @@ def game():
                 print(f'\n{bg("red")}Game over - COMPUTER WON!')
                 break
     except KeyboardInterrupt:
-        print('\n Game interrupted by player')
+        print('Game interrupted by player')
     except Exception as e:
         print(f'an error occurred during the game: {e}')
 
