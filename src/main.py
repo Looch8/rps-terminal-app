@@ -23,7 +23,7 @@ def get_player_choice():
             else:
                 return player_choice
         except ValueError as e:
-            print(f'{fg(28)}Not a valid choice, please choose again.')
+            print(f'{fg(28)} {e} is not a valid choice, please choose again.')
 
 
 def get_computer_choice():
