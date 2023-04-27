@@ -15,7 +15,7 @@ def get_player_choice():
     while True:
         try:
             player_choice = input(
-                f"\n{fg('yellow')}Type 'rock', 'paper', or 'scissors' - or type 'end' to quit: ").lower()
+                f"\n{fg('yellow')}Type 'rock', 'paper', or 'scissors' - or type 'end' to quit: \n\n").lower()
             if player_choice == "end":
                 print(f'\n{fg(5)}Goodbye, thank you for playing! :)')
                 exit()
