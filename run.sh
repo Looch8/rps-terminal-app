@@ -7,6 +7,7 @@
 python3 -m venv rps-venv
 source rps-venv/bin/activate
 pip3 install -r requirements.txt
+clear
 python3 src/main.py
 
 
