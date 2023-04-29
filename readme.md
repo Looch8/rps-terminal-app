@@ -65,8 +65,6 @@ Best of five: Low priority, deadline of 5 days
 Add colour to output: Low priority, deadline of 5 days
 ![user input](docs/trello9.png)
 
-In summary:
-
 <div style="page-break-after: always; visibility: hidden"> 
 \pagebreak 
 </div>
