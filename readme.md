@@ -12,7 +12,7 @@ This application will Adhere to the PEP8 python style guide (1).
 
 ## R6 - Features that will be included
 
-This application is a Rock-Paper-Scissors game that allows a user to play agaisnt the computer and will be run entirely from the console.
+This application is a Rock-Paper-Scissors game that allows a user to play against the computer and will be run entirely from the console.
 The app has the following features:
 
 1. A function that takes user input to get the player's choice of either rock, paper, or scissors. If the player types a keyword such as 'end', the program will terminate. If the player types an invalid input, the function will raise a ValueError and will re-prompt the player to choose again.
