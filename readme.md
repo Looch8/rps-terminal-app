@@ -2,6 +2,12 @@
 
 [GitHub Repo](https://github.com/Looch8/rps-terminal-app.git)
 
+<!-- To fill this out -->
+
+[Link to YouTube Presentation]
+
+## R5
+
 This application will Adhere to the PEP8 python style guide (1).
 
 ## R6 - Features that will be included
@@ -26,6 +32,40 @@ The app has the following features:
    While the score is less than 5, the round function will continue to loop, and receive input from the user, once the player or computer reaches 5 points, the game will end and the winner will be declared and printed to the console. If the player types 'end' or interrupts the game with a keyboard interrupt, the game will also end.
 
 This app will include error handling and testing of the main functions.
+
+## R7 Develop an implementation plan
+
+I developed an implementation plan for my project using Trello.
+
+These are all the features I would implement.
+Each feature has a deadline, a checklist, and a description.
+![main page](docs/trello1.png)
+
+User input: High priority, deadline of 2 days
+![user input](docs/trello2.png)
+
+Computer's Turn: High priority, deadline of 2 days
+![user input](docs/trello3.png)
+
+Determine Winner: High priority, deadline of 2 days
+![user input](docs/trello4.png)
+
+Display Results: Medium priority, deadline of 3 days
+![user input](docs/trello5.png)
+
+Keep Score: Medium priority, deadline of 3 days
+![user input](docs/trello6.png)
+
+Display Scores: Medium priority, deadline of 3 days
+![user input](docs/trello7.png)
+
+Best of five: Low priority, deadline of 5 days
+![user input](docs/trello8.png)
+
+Add colour to output: Low priority, deadline of 5 days
+![user input](docs/trello9.png)
+
+In summary:
 
 <div style="page-break-after: always; visibility: hidden"> 
 \pagebreak 
