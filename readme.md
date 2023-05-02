@@ -65,6 +65,28 @@ Best of five: Low priority, deadline of 5 days
 Add colour to output: Low priority, deadline of 5 days
 ![user input](docs/trello9.png)
 
+## R8 - How to install and use this app.
+
+### Installation
+
+1. Clone or download repository from https://github.com/Looch8/rock-paper-scissors
+2. Download and install Python 3.
+3. Activate a virtual environment by typing the following command into the termonal: `python3 -m venv rps-venv` followed by `source rps-venv/bin/activate`.
+4. Install the required dependencies by running the following command in the terminal: `pip3 install -r requirements.txt`. If this step does not work try typing `pip install -r requirements.txt` instead.
+
+### Dependencies
+
+-   Python 3
+-   Colored module
+-   art module
+-   emoji module
+-   random module
+
+## System/Hardware Requirements
+
+-   This game can be played on any system that has python installed on it.
+-   This game is a command-line interface (CLI) application and does not require any special hardware to run.
+
 <div style="page-break-after: always; visibility: hidden"> 
 \pagebreak 
 </div>

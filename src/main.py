@@ -125,10 +125,3 @@ def game():
 # To prevent entire script from running when testing
 if __name__ == "__main__":
     game()
-
-# Hardware requirements just has to be "what hardware you tested it on"
-
-#   N.B. this does NOT include importing your own functions. You need 5 of these as well.
-
-
-# Project management platforms: trello, monday.com, meistertask
