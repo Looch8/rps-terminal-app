@@ -6,17 +6,17 @@ from main import play_round, get_computer_choice
 
 
 def test_play_round():
-    # Player wins
+    # Player wins - This tests whether the play_round() function returns 'player' when the player wins.
     assert play_round('rock', 'scissors') == 'player'
     assert play_round('paper', 'rock') == 'player'
     assert play_round('scissors', 'paper') == 'player'
 
-    # Computer wins
+    # Computer wins - This tests whether the play_round() function returns 'computer' when the computer wins.
     assert play_round('rock', 'paper') == 'computer'
     assert play_round('paper', 'scissors') == 'computer'
     assert play_round('scissors', 'rock') == 'computer'
 
-    # draw
+    # draw - This tests whether the play_round() function returns 'draw' when both the player and the computer choose the same option
     assert play_round('rock', 'rock') == 'draw'
     assert play_round('paper', 'paper') == 'draw'
     assert play_round('scissors', 'scissors') == 'draw'
