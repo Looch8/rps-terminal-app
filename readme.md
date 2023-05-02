@@ -87,6 +87,18 @@ Add colour to output: Low priority, deadline of 5 days
 -   This game can be played on any system that has python installed on it.
 -   This game is a command-line interface (CLI) application and does not require any special hardware to run.
 
+### How to Use
+
+-   Open the terminal and navigate to the 'src' directory where the game is installed.
+-   Run the following command to start the program: `python3 rps.py`.
+-   Follow the on-screen instructions to play the game.
+-   When prompted, type either "rock", "paper", or "scissors".
+-   The scores for each round will be saved to a CSV file.
+-   The first player to win 5 rounds will be declared the winner, and the game will end after this point.
+-   You can end the game at any point by typing "end" or interrupt the game by pressing `CTRL + C`.
+
+You are now ready to play the game!
+
 <div style="page-break-after: always; visibility: hidden"> 
 \pagebreak 
 </div>

@@ -117,6 +117,7 @@ def game():
                 print(f'\n{bg("red")}Game over - COMPUTER WON!😭')
                 break
     except KeyboardInterrupt:
+        # CTRL + C to interrupt game at any point
         print('Game interrupted by player')
     except Exception as e:
         print(f'an error occurred during the game: {e}')
