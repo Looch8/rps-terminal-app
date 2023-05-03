@@ -2,7 +2,7 @@
 
 [GitHub Repo](https://github.com/Looch8/rps-terminal-app.git)
 
-<!-- To fill this out -->
+[YouTube presentation](https://youtu.be/0tInpwq2nNM)
 
 [Link to YouTube Presentation]
 
