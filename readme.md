@@ -4,8 +4,6 @@
 
 [YouTube presentation](https://youtu.be/0tInpwq2nNM)
 
-[Link to YouTube Presentation]
-
 ## R5
 
 This application will Adhere to the PEP8 python style guide (1).
