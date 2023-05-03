@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # To run entire file 
-# ./run.sh
+# ./src/run.sh
 
 # Setup, start virtual environment, install requirements and run main
 python3 -m venv rps-venv
