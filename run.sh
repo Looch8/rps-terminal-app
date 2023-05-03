@@ -14,6 +14,3 @@ python3 src/main.py
 # to run test (While in rps-venv)
 # python -m pytest 
 # Or just run pytest (in rps-venv)
-
-# To run .sh file
-# sh run.sh
